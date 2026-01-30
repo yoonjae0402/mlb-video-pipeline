@@ -1,0 +1,67 @@
+# MLB Video Pipeline - Requirements
+# Install: pip install -r requirements.txt
+# Last updated: 2025-01
+
+# =============================================================================
+# Data & Machine Learning
+# =============================================================================
+pybaseball>=2.2.7              # MLB statistics and Statcast data
+MLB-StatsAPI>=1.7.2            # Official MLB Stats API wrapper
+torch>=2.2.0,<3.0.0            # PyTorch for ML models
+pandas>=2.1.0,<3.0.0           # Data manipulation
+numpy>=1.26.0,<2.0.0           # Numerical computing (numpy 2.x has breaking changes)
+scikit-learn>=1.4.0,<2.0.0     # ML utilities (train/test split, metrics)
+
+# =============================================================================
+# AI APIs
+# =============================================================================
+openai>=1.40.0,<2.0.0          # GPT-4 for script generation
+elevenlabs>=1.0.0,<2.0.0       # Text-to-speech narration (SDK v1.x)
+
+# =============================================================================
+# Video & Image Processing
+# =============================================================================
+Pillow>=10.2.0,<11.0.0         # Image processing
+matplotlib>=3.8.0,<4.0.0       # Charts and visualizations
+moviepy>=1.0.3,<2.0.0          # Video editing (moviepy 2.0 has API changes)
+imageio>=2.33.0,<3.0.0         # Image I/O for moviepy
+imageio-ffmpeg>=0.4.9          # FFmpeg backend
+
+# =============================================================================
+# Web & APIs
+# =============================================================================
+requests>=2.31.0,<3.0.0        # HTTP requests
+beautifulsoup4>=4.12.0         # HTML parsing (for scraping if needed)
+google-api-python-client>=2.100.0  # YouTube Data API
+google-auth-oauthlib>=1.2.0    # Google OAuth
+google-auth-httplib2>=0.2.0    # Google Auth HTTP
+
+# =============================================================================
+# Dashboard & Monitoring
+# =============================================================================
+streamlit>=1.35.0,<2.0.0       # Monitoring dashboard
+plotly>=5.18.0,<6.0.0          # Interactive charts
+seaborn>=0.13.0                # Statistical visualizations
+
+# =============================================================================
+# Utilities
+# =============================================================================
+python-dotenv>=1.0.0           # Environment variable management
+pydantic>=2.5.0,<3.0.0         # Data validation
+pydantic-settings>=2.1.0,<3.0.0  # Settings management
+pyyaml>=6.0.1                  # YAML config files
+click>=8.1.7                   # CLI framework
+rich>=13.7.0                   # Beautiful terminal output
+tqdm>=4.66.0                   # Progress bars
+
+# =============================================================================
+# Testing
+# =============================================================================
+pytest>=8.0.0,<9.0.0           # Testing framework
+pytest-cov>=4.1.0              # Coverage reporting
+pytest-asyncio>=0.23.0         # Async test support
+
+# =============================================================================
+# AWS (for deployment)
+# =============================================================================
+boto3>=1.34.0                  # AWS SDK

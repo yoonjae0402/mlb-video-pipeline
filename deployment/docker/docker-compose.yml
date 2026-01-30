@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mlb-pipeline:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile
+    volumes:
+      - ../../data:/app/data
+      - ../../outputs:/app/outputs
+      - ../../logs:/app/logs
+      - ../../models:/app/models
+    env_file:
+      - ../../.env
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile
+    command: streamlit run dashboard/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../../data:/app/data
+      - ../../outputs:/app/outputs
+      - ../../logs:/app/logs
+    env_file:
+      - ../../.env
+    depends_on:
+      - mlb-pipeline
